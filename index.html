@@ -8,44 +8,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Portfolio</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
 
-    <main class="home-main">
-        <div class="hero-section">
-            <div class="hero-content">
-                <h1 class="animate-title">Welcome to My Portfolio</h1>
-                <p class="animate-text">Hello! I'm a Web Developer</p>
-                <p class="subtitle animate-text">Passionate about creating beautiful and functional websites</p>
-                <div class="cta-buttons">
-                    <a href="projects.html" class="cta-button">View My Work</a>
-                    <a href="contact.html" class="cta-button secondary">Get in Touch</a>
+    <div class="page-transition">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Portfolio</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="home-main">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="animate-title scroll-reveal">Welcome to My Portfolio</h1>
+                    <p class="animate-text scroll-reveal">Hello! I'm a Web Developer</p>
+                    <p class="subtitle animate-text scroll-reveal">Passionate about creating beautiful and functional websites</p>
+                    <div class="cta-buttons">
+                        <a href="projects.html" class="cta-button">View My Work</a>
+                        <a href="contact.html" class="cta-button secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <div class="skill-icon scroll-reveal"><i class="fab fa-html5"></i></div>
+                    <div class="skill-icon scroll-reveal"><i class="fab fa-css3-alt"></i></div>
+                    <div class="skill-icon scroll-reveal"><i class="fab fa-js"></i></div>
+                    <div class="skill-icon scroll-reveal"><i class="fab fa-react"></i></div>
                 </div>
             </div>
-            <div class="skills-section">
-                <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <div class="skill-icon"><i class="fab fa-react"></i></div>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
+        <footer>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
