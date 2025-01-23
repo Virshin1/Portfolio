@@ -5,53 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Portfolio</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
 
-    <main>
-        <h1>My Projects</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="assets/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3>Project 1</h3>
-                    <p>A responsive website built using HTML and CSS. Features modern design principles and mobile-first approach.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/project2.jpg" alt="Project 2">
-                <div class="project-info">
-                    <h3>Project 2</h3>
-                    <p>An interactive web application showcasing JavaScript skills and DOM manipulation.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/project3.jpg" alt="Project 3">
-                <div class="project-info">
-                    <h3>Project 3</h3>
-                    <p>A portfolio website template with clean and modern design elements.</p>
-                </div>
-            </div>
-        </div>
-    </main>
+    <div class="page-transition">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Portfolio</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
+        <main>
+            <h1 class="animate-title scroll-reveal">My Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card scroll-reveal">
+                    <img src="assets/project1.jpg" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Project 1</h3>
+                        <p>A responsive website built using HTML and CSS. Features modern design principles and mobile-first approach.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card scroll-reveal">
+                    <img src="assets/project2.jpg" alt="Project 2">
+                    <div class="project-info">
+                        <h3>Project 2</h3>
+                        <p>An interactive web application showcasing JavaScript skills and DOM manipulation.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card scroll-reveal">
+                    <img src="assets/project3.jpg" alt="Project 3">
+                    <div class="project-info">
+                        <h3>Project 3</h3>
+                        <p>A portfolio website template with clean and modern design elements.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
