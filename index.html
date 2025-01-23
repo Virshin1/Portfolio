@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,16 +20,31 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm a web developer passionate about creating beautiful and functional websites.</p>
+    <main class="home-main">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="animate-title">Welcome to My Portfolio</h1>
+                <p class="animate-text">Hello! I'm a Web Developer</p>
+                <p class="subtitle animate-text">Passionate about creating beautiful and functional websites</p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="cta-button">View My Work</a>
+                    <a href="contact.html" class="cta-button secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="skills-section">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <div class="skill-icon"><i class="fab fa-js"></i></div>
+                <div class="skill-icon"><i class="fab fa-react"></i></div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 </body>
