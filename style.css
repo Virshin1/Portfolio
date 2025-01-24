@@ -177,11 +177,49 @@ main {
 /* About Page Styles */
 .about-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 2rem auto;
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s ease;
+    position: relative;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.about-content h2 {
+    color: var(--text-light);
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.about-content p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 /* Projects Grid */
@@ -333,28 +371,38 @@ footer {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
+    padding: 1rem;
 }
 
 .skill-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
+    background: var(--background-darker);
+    padding: 2rem;
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 30px rgba(52, 152, 219, 0.3);
+    border-color: var(--primary-color);
 }
 
 .skill-item i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+.skill-item span {
+    display: block;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
 }
 
 /* Responsive Design */
@@ -406,6 +454,44 @@ footer {
 
     .contact-item {
         margin-bottom: 1rem;
+    }
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .about-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        margin: 1.5rem auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .skill-item {
+        padding: 1.5rem;
+    }
+
+    .skill-item i {
+        font-size: 2.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
