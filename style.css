@@ -101,13 +101,13 @@ nav ul li a:hover::after {
 
 /* Main Content and Page Title Styles */
 main {
-    padding-top: 6rem;
-    min-height: calc(100vh - 80px);
+    padding-top: 5rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    min-height: calc(100vh - 60px);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .page-title {
@@ -176,48 +176,45 @@ main {
 
 /* About Page Styles */
 .about-container {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 2rem;
     background: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
 }
 
 .profile-image {
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     object-fit: cover;
     display: block;
-    transition: all 0.5s ease;
-    position: relative;
+    transition: all 0.3s ease;
     border: 3px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.2);
 }
 
 .profile-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
 }
 
 .about-content {
-    max-width: 800px;
-    margin: 2rem auto;
+    margin-top: 2rem;
     text-align: left;
 }
 
 .about-content h2 {
     color: var(--text-light);
-    margin: 2rem 0 1rem;
     font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .about-content p {
     color: var(--text-gray);
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
@@ -371,16 +368,15 @@ footer {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .skill-item {
     background: var(--background-darker);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 1.5rem;
+    border-radius: 8px;
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -388,21 +384,20 @@ footer {
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 30px rgba(52, 152, 219, 0.3);
     border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
 }
 
 .skill-item i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .skill-item span {
     display: block;
     color: var(--text-light);
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
@@ -433,7 +428,7 @@ footer {
     }
 
     main {
-        padding-top: 5rem;
+        padding-top: 4rem;
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -455,43 +450,37 @@ footer {
     .contact-item {
         margin-bottom: 1rem;
     }
-}
 
-/* Responsive Design for About Page */
-@media (max-width: 768px) {
     .about-container {
-        margin: 1rem;
         padding: 1.5rem;
+        margin: 1rem;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
-        margin: 1.5rem auto;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
-        padding: 0.5rem;
-    }
-
-    .skill-item {
-        padding: 1.5rem;
-    }
-
-    .skill-item i {
-        font-size: 2.5rem;
+        width: 150px;
+        height: 150px;
+        margin: 1rem auto;
     }
 
     .about-content h2 {
         font-size: 1.5rem;
-        margin: 1.5rem 0 0.75rem;
     }
 
     .about-content p {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+
+    .skill-item {
+        padding: 1rem;
+    }
+
+    .skill-item i {
+        font-size: 2rem;
     }
 }
 
@@ -660,14 +649,15 @@ h1 {
 }
 
 .animate-title {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
+    font-size: 2.5rem;
+    color: var(--text-light);
     margin-bottom: 2rem;
-    font-size: 3rem;
+    text-align: center;
     background: linear-gradient(45deg, var(--text-light) 30%, var(--primary-color) 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
     line-height: 1.4;
 }
